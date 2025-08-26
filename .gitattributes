@@ -1,3 +1,9 @@
-# Don’t include GitHub-only files
+# Exclude the document folder (and PDFs inside) from release ZIP
+documents/ export-ignore
+documents/* export-ignore
+*.pdf export-ignore
+
+# Exclude GitHub-only files from release ZIP
 .gitattributes export-ignore
 .gitignore export-ignore
+README.md export-ignore
