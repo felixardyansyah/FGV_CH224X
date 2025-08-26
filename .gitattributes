@@ -6,4 +6,3 @@ documents/* export-ignore
 # Exclude GitHub-only files from release ZIP
 .gitattributes export-ignore
 .gitignore export-ignore
-README.md export-ignore
