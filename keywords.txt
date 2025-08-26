@@ -1,0 +1,28 @@
+#######################################
+# Autotype Syntax for CH224X Lib
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+CH224X_IO           KEYWORD1
+CH224X_I2C          KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+SetVoltage          KEYWORD2
+GetProtocol         KEYWORD2
+getCurrentProfile   KEYWORD2
+isPowerGood         KEYWORD2
+getPowerProtocol    KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+CH224_K             LITERAL1
+CH224_Q             LITERAL1
+CH224_AQ            LITERAL1
