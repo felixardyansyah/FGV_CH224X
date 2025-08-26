@@ -1,0 +1,8 @@
+# Don’t include datasheets in the release ZIP
+document/* export-ignore
+*.pdf export-ignore
+
+# Don’t include GitHub-only files
+.gitattributes export-ignore
+.gitignore export-ignore
+README.md export-ignore
