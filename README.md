@@ -73,11 +73,13 @@ for using CH224A/Q without power good
 and make sure in the setup you insert `CH224X1.begin();`
 
 ## I2C Wiring with static pinout Example
+###⚠️ NOTE using 5V logic MCU must use 5L and 5D pin for to use built in I2C ttl voltage converter
+
 ### Arduino / ATmega / LGT8F328 (5V logic)
 | CH224X Pin     | Board Pin Example |
 |----------------|-------------------|
-| SDA (SD)       | A5 (Arduino, LGT8F328) → *may differ on other MCUs* |
-| SCL (SL)       | A4 (Arduino, LGT8F328) → *may differ on other MCUs* |
+| SDA (5D)       | A5 (Arduino, LGT8F328) → *may differ on other MCUs* |
+| SCL (5L)       | A4 (Arduino, LGT8F328) → *may differ on other MCUs* |
 | PG (Power Good)| A7 |
 | 5V             | 5V |
 | 3V             | 3.3V |
