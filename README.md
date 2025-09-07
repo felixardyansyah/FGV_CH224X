@@ -101,6 +101,8 @@ and make sure in the setup you insert `CH224X1.begin();`
 | GND            | GND |
 <hr>
 
+## I2C Wiring with dynamic pinout Example
+
 ### ESP32xxx (3.3V logic)
 
 | CH224X Pin     | Board Pin Example |
