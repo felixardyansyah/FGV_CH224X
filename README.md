@@ -25,17 +25,29 @@ This library use the Arduino standard I2C/Two-Wire Library for its I2C communica
 
 ## instalation
 
-as the time of the writing the README.md this libraries is not officially in arduino libraries soo you need to install manually, i am so sorry :(
+### Manual
 
-Go to your GitHub repo.
 
-Click the green Code button → Download ZIP.
+1. Go to **FGV_CH224X** repo.
 
-Open Arduino IDE.
+2. Click the green Code button → **Download ZIP**.
 
-Go to Sketch → Include Library → Add .ZIP Library…
+3. Open Arduino IDE.
 
-Select the ZIP you just downloaded.
+4. Go to Sketch → **Include Library** → **Add .ZIP Library…**
+
+5. Select the **ZIP** you just downloaded.
+
+### Arduino IDE Library Manager(available now)
+
+1. Open the Arduino IDE.  
+
+2. Go to **Tools → Manage Libraries…**  
+
+3. Search for **FGV_CH224X**.  
+
+4. Click **Install**.
+
 
 <hr>
 
