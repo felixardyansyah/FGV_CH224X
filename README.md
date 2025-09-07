@@ -144,6 +144,8 @@ and make sure in the setup you insert `CH224X1.begin();`
 
 ## IO Wiring with static pinout Example
 
+# ⚠️ Reminder if you use 5V logic MCU you need 2K resistor if not your CH224X will release the magic smoke
+
 ### Arduino / ATmega / LGT8F328 (5V logic, with resistors)
 
 | CH224X Pin     | Need       | Board Pin Example |
@@ -169,9 +171,6 @@ and make sure in the setup you insert `CH224X1.begin();`
 <hr>
 
 In **IO** mode, you cannot do that much again it is the limitation of simple GPIO logic of CH224X but in the bright side is kinda simple and use less memory. with 3V logic MCU like STM32 or ESP32 you dont need any additional component, but if you use 5V logic MCU you need additional resistor
-
-# ⚠️ Reminder if you use 5V logic MCU you need 2K resistor if not your CH224X will release the magic smoke
-
 
 <hr>
 
