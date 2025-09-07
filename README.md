@@ -75,7 +75,7 @@ and make sure in the setup you insert `CH224X1.begin();`
 ## I2C Wiring with static pinout Example
 
 
-### ⚠️ NOTE using 5V logic MCU must use 5L and 5D pin for to use built in I2C ttl voltage converter
+### ⚠️ NOTE using 5V logic MCU must use 5L and 5D pin for to use built in I2C TTL voltage converter
 
 
 ### Arduino / ATmega / LGT8F328 (5V logic)
