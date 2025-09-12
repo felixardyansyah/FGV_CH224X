@@ -18,14 +18,13 @@
 /*
   !!! reminder CH224A is 5V sensitive it can kill your ic
 
-  arduino(atmega chip), LGT8F328, and other 5V IC logic
+  arduino(ATMEGA328 chip), LGT8F328, and other 5V IC logic
   Wiring for my board CH224X module:
 
   CH224X         ->  Board
   ------------------------------------------------------------------------------------------------------------------------------------------
-  SDA(5D)        -> A5 (arduino, LGT8F328) your pin will be different if you use other ic
-  SCL(5L)        -> A4 (arduino, LGT8F328) your pin will be different if you use other ic
-  PG(Power Good) -> A7
+  SDA(5D)        -> A5 (ATMEGA328, LGT8F328) your pin will be different if you use other ic
+  SCL(5L)        -> A4 (ATMEGA328, LGT8F328) your pin will be different if you use other ic
   5V             -> 5V
   3V             -> 3V
   GND            -> GND
@@ -75,7 +74,6 @@ void loop() {
     Serial.print(" ma or ");
     Serial.print((float)CH224X1.getCurrentProfile() / 1000.0);
     Serial.println(" A");
-    CH224X1.setVoltage(4); // 0:5V, 1:9V, 2:12V, 3:15V, 4:20V, 5:28V, 6:PPS mode(CH224Q), 7:AVS mode (CH224Q)
   } else if (CH224X1.hasProtocol(CH224X_I2C::PROTOCOL_QC2) || CH224X1.hasProtocol(CH224X_I2C::PROTOCOL_QC3)) {
     CH224X1.setVoltage(2); // 0:5V, 1:9V, 2:12V, 3:15V, 4:20V, 5:28V, 6:PPS mode(CH224Q), 7:AVS mode (CH224Q)
     Serial.println("Negotiated: QC to 12V");

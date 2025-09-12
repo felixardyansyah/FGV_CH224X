@@ -86,16 +86,29 @@ and make sure in the setup you insert `CH224X1.begin();`
 
 ## I2C Wiring with static pinout Example
 
+# [FOR MORE BETER VISUALISATION OF THE PINOUT CLICK HERE](https://github.com/felixardyansyah/CH224A_MODULE_FGV)
 
 ### ⚠️ NOTE using 5V logic MCU must use 5L and 5D pin for to use built in I2C TTL voltage converter
 
 
-### Arduino / ATmega / LGT8F328 (5V logic)
+### Arduino(ATMEGA328) / LGT8F328 (5V logic)
 | CH224X Pin     | Board Pin Example |
 |----------------|-------------------|
 | SDA (5D)       | A5 (Arduino, LGT8F328) → *may differ on other MCUs* |
 | SCL (5L)       | A4 (Arduino, LGT8F328) → *may differ on other MCUs* |
 | PG (Power Good)| A7 |
+| 5V             | 5V |
+| 3V             | 3.3V |
+| GND            | GND |
+
+---
+
+### Arduino MEGA AND DUE (5V logic)
+| CH224X Pin     | Board Pin Example |
+|----------------|-------------------|
+| SDA (5D)       | D20 (Arduino, LGT8F328) → *may differ on other MCUs* |
+| SCL (5L)       | D21 (Arduino, LGT8F328) → *may differ on other MCUs* |
+| PG (Power Good)| D17 |
 | 5V             | 5V |
 | 3V             | 3.3V |
 | GND            | GND |
@@ -158,13 +171,25 @@ and make sure in the setup you insert `CH224X1.begin();`
 
 # ⚠️ Reminder if you use 5V logic MCU you need 2K resistor if not your CH224X will release the magic smoke
 
-### Arduino / ATmega / LGT8F328 (5V logic, with resistors)
+### Arduino(ATMEGA328) / LGT8F328 (5V logic, with resistors)
 
 | CH224X Pin     | Need       | Board Pin Example |
 |----------------|-------------------|-------------------|
 | SDA (IO1)      | 2 kΩ resistor     | A6 (Arduino, LGT8F328) → *may differ on other MCUs* |
 | IO2 (SD)       | 2 kΩ resistor     | A5 (Arduino, LGT8F328) → *may differ on other MCUs* |
 | IO3 (SL)       | 2 kΩ resistor     | A4 (Arduino, LGT8F328) → *may differ on other MCUs* |
+| 3V             | —                 | 3.3V |
+| GND            | —                 | GND |
+
+---
+
+### Arduino MEGA AND DUE (5V logic, with resistors)
+
+| CH224X Pin     | Need       | Board Pin Example |
+|----------------|-------------------|-------------------|
+| SDA (IO1)      | 2 kΩ resistor     | 19 *may differ on other MCUs* |
+| IO2 (SD)       | 2 kΩ resistor     | 20 *may differ on other MCUs* |
+| IO3 (SL)       | 2 kΩ resistor     | 21 *may differ on other MCUs* |
 | 3V             | —                 | 3.3V |
 | GND            | —                 | GND |
 
@@ -249,4 +274,10 @@ This means:
 - If you manufacture or sell boards based on my design, you **must credit me AS Felix Ardyansyah OR FGV** somewhere in your documentation or product page.
 
 ## Changelog
-- v1.0.0 — First public release
+### v1.0.0 
+- First public release
+
+### v1.0.1
+- adding board support for example code to Arduino Mega and Due
+- Minor wording and README improvements
+

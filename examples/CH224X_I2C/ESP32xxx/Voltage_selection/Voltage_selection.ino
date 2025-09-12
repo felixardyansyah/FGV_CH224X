@@ -118,7 +118,6 @@ void loop() {
     Serial.print(" ma or ");
     Serial.print((float)CH224X1.getCurrentProfile() / 1000.0);
     Serial.println(" A");
-    CH224X1.setVoltage(4); // 0:5V, 1:9V, 2:12V, 3:15V, 4:20V, 5:28V, 6:PPS mode(CH224Q), 7:AVS mode (CH224Q)
   } else if (CH224X1.hasProtocol(CH224X_I2C::PROTOCOL_QC2) || CH224X1.hasProtocol(CH224X_I2C::PROTOCOL_QC3)) {
     CH224X1.setVoltage(2); // 0:5V, 1:9V, 2:12V, 3:15V, 4:20V, 5:28V, 6:PPS mode(CH224Q), 7:AVS mode (CH224Q)
     Serial.println("Negotiated: QC to 12V");

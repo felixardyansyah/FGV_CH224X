@@ -18,14 +18,14 @@
 /*
   !!! reminder CH224A is 5V sensitive it can kill your ic
 
-  arduino(atmega chip), LGT8F328, and other 5V IC logic you need 2KΩ resistor between your gpio and CH224X IC
+  ARDUINO(ATMEGA328 chip), LGT8F328, and other 5V IC logic you need 2KΩ resistor between your gpio and CH224X IC
   Wiring for my board CH224X module:
 
   CH224X         -> need   ->  Board
   ------------------------------------------------------------------------------------------------------------------------------------------
-  SDA(IO1)       -> 2KΩ resistor -> A6 (arduino, LGT8F328) your pin will be different if you use other ic
-  IO2(SD)        -> 2KΩ resistor -> A5 (arduino, LGT8F328) your pin will be different if you use other ic
-  IO3(SL)        -> 2KΩ resistor -> A4 (arduino, LGT8F328) your pin will be different if you use other ic
+  SDA(IO1)       -> 2KΩ resistor -> A6 (ATMEGA328, LGT8F328) your pin will be different if you use other ic
+  IO2(SD)        -> 2KΩ resistor -> A5 (ATMEGA328, LGT8F328) your pin will be different if you use other ic
+  IO3(SL)        -> 2KΩ resistor -> A4 (ATMEGA328, LGT8F328) your pin will be different if you use other ic
   3V             -> 3V
   GND            -> GND
 
@@ -49,6 +49,7 @@
   // #define IO3 6
 */
 
+
 #if defined(ARDUINO_ARCH_STM32)
   #ifndef LED_BUILTIN
     #define LED_BUILTIN PC13
@@ -70,6 +71,18 @@
   #define IO1      A4
   #define IO2      A5
   #define IO3      A6
+
+#elif defined(ARDUINO_AVR_MEGA2560) || defined(ARDUINO_AVR_MEGA) || defined(ARDUINO_SAM_DUE)
+  // Arduino Mega and Arduino Due
+  #ifndef LED_BUILTIN
+    #define LED_BUILTIN 13
+  #endif
+  #define PG_PIN   17
+  #define LED_ON   HIGH
+  #define LED_OFF  LOW
+  #define IO1      19
+  #define IO2      20
+  #define IO3      21
 
 #elif defined(CONFIG_IDF_TARGET_ESP32)
   #define LED_BUILTIN  2
@@ -118,6 +131,8 @@
   #define IO2      A5
   #define IO3      A6
 #endif
+
+
 
 
 #include <CH224X_IO.h>

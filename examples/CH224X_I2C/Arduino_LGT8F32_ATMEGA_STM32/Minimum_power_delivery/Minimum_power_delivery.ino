@@ -19,13 +19,13 @@
 /*
   !!! reminder CH224A is 5V sensitive it can kill your ic
 
-  arduino(atmega chip), LGT8F328, and other 5V IC logic
+  arduino(ATMEGA328 chip), LGT8F328, and other 5V IC logic
   Wiring for my board CH224X module:
 
   CH224X         ->  Board
   ------------------------------------------------------------------------------------------------------------------------------------------
-  SDA(5D)        -> A5 (arduino, LGT8F328) your pin will be different if you use other ic
-  SCL(5L)        -> A4 (arduino, LGT8F328) your pin will be different if you use other ic
+  SDA(5D)        -> A5 (ATMEGA328, LGT8F328) your pin will be different if you use other ic
+  SCL(5L)        -> A4 (ATMEGA328, LGT8F328) your pin will be different if you use other ic
   PG(Power Good) -> A7
   5V             -> 5V
   3V             -> 3V
@@ -48,7 +48,7 @@
 // Define built-in LED and CH224X Power-Good (PG) pin
 // PG is active low: LOW = power good, HIGH = power bad
 #if defined(ARDUINO_ARCH_STM32)
-  // STM32 boards — default to PA5 for LED if not already defined
+  // STM32 boards — default to PC13 for LED if not already defined
   #ifndef LED_BUILTIN
     #define LED_BUILTIN PC13
   #endif
@@ -68,16 +68,27 @@
   #define LED_ON   HIGH
   #define LED_OFF  LOW
 
+#elif defined(ARDUINO_AVR_MEGA2560) || defined(ARDUINO_AVR_MEGA) || defined(ARDUINO_SAM_DUE)
+  // Arduino Mega and Arduino Due
+  #ifndef LED_BUILTIN
+    #define LED_BUILTIN 13
+  #endif
+  #define PG_PIN  17   // Use D17 for PG pin
+
+  #define LED_ON   HIGH
+  #define LED_OFF  LOW
+
 #else
   // Default Arduino AVR boards (Uno, Nano, etc.)
   #ifndef LED_BUILTIN
-    #define LED_BUILTIN D13
+    #define LED_BUILTIN 13
   #endif
   #define PG_PIN  A7
 
   #define LED_ON   HIGH
   #define LED_OFF  LOW
 #endif
+
 
 
 #include <Wire.h>
